@@ -12,49 +12,40 @@
   </style>
 </head>
 <body>
-  <header>
+  <header class="fade-in">
     <h1>dekapurinportfolio</h1>
-    <p class="fade-in">こんにちは、私は仮の紹介文を書いている3DCGアーティストです。</p>
+    <p>こんにちは、私は仮の紹介文を書いている3DCGアーティストです。</p>
   </header>
 
-  <section id="works" class="fade-in">
-    <h2>Works</h2>
-    <div class="work-gallery">
-      <div class="work">
-        <img src="images/work1.jpg" alt="作品タイトル1" />
-        <h3>作品タイトル1</h3>
-        <p>作品の簡単な説明です（後で編集可能）</p>
-        <a href="https://example.com" target="_blank">詳細を見る</a>
+  <main>
+    <section id="works" class="fade-in">
+      <h2>Works</h2>
+      <div class="work-gallery">
+        <div class="work">
+          <div class="image-container">
+            <img src="images/work1.jpg" alt="作品タイトル1" />
+          </div>
+          <h3>作品タイトル1</h3>
+          <p>作品の簡単な説明です（後で編集可能）</p>
+          <a href="https://example.com" target="_blank">詳細を見る</a>
+        </div>
+        <!-- 追加作品もこの形式で増やしてください -->
       </div>
-      <!-- 作品はここに20点分追加してください -->
-    </div>
-  </section>
+    </section>
 
-  <section id="contact" class="fade-in">
-    <h2>Contact</h2>
-    <p>X（Twitter）でご連絡ください。</p>
-    <ul>
-      <li><a href="https://twitter.com/yourhandle" target="_blank">Twitter</a></li>
-    </ul>
-  </section>
+    <section id="contact" class="fade-in">
+      <h2>Contact</h2>
+      <p>X（Twitter）でご連絡ください。</p>
+      <ul>
+        <li><a href="https://twitter.com/yourhandle" target="_blank">Twitter</a></li>
+      </ul>
+    </section>
+  </main>
 
-  <footer>
+  <footer class="fade-in">
     <p>&copy; 2025 dekapurin</p>
   </footer>
 
-  <script>
-    // IntersectionObserverでfade-inアニメーションを実装
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('in-view');
-        }
-      });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.fade-in').forEach(el => {
-      observer.observe(el);
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
