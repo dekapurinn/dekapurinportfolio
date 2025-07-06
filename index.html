@@ -5,29 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>dekapurinportfolio</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
 </head>
 <body>
   <header>
     <h1>dekapurinportfolio</h1>
-    <p>こんにちは、私は仮の紹介文を書いている3DCGアーティストです。</p> <!-- 👈 後で差し替えOK -->
+    <p class="fade-in">こんにちは、私は仮の紹介文を書いている3DCGアーティストです。</p>
   </header>
 
-  <section id="works">
+  <section id="works" class="fade-in">
     <h2>Works</h2>
     <div class="work-gallery">
-      <!-- 👇 ここから20作品分 繰り返し -->
-      <!-- 1作品の例 -->
       <div class="work">
         <img src="images/work1.jpg" alt="作品タイトル1">
         <h3>作品タイトル1</h3>
         <p>作品の簡単な説明です（後で編集可能）</p>
         <a href="https://example.com" target="_blank">詳細を見る</a>
       </div>
-      <!-- 👆 これを20点分コピーして増やしてOK -->
     </div>
   </section>
 
-  <section id="contact">
+  <section id="contact" class="fade-in">
     <h2>Contact</h2>
     <p>X（Twitter）でご連絡ください。</p>
     <ul>
@@ -38,5 +40,22 @@
   <footer>
     <p>&copy; 2025 dekapurin</p>
   </footer>
+
+  <script>
+    // IntersectionObserverでfade-inアニメーション
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    document.querySelectorAll('.fade-in').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
 </body>
 </html>
