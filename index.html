@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>dekapurinportfolio</title>
   <link rel="stylesheet" href="style.css" />
   <style>
@@ -21,11 +21,12 @@
     <h2>Works</h2>
     <div class="work-gallery">
       <div class="work">
-        <img src="images/work1.jpg" alt="作品タイトル1">
+        <img src="images/work1.jpg" alt="作品タイトル1" />
         <h3>作品タイトル1</h3>
         <p>作品の簡単な説明です（後で編集可能）</p>
         <a href="https://example.com" target="_blank">詳細を見る</a>
       </div>
+      <!-- 作品はここに20点分追加してください -->
     </div>
   </section>
 
@@ -42,16 +43,14 @@
   </footer>
 
   <script>
-    // IntersectionObserverでfade-inアニメーション
+    // IntersectionObserverでfade-inアニメーションを実装
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('in-view');
         }
       });
-    }, {
-      threshold: 0.1
-    });
+    }, { threshold: 0.1 });
 
     document.querySelectorAll('.fade-in').forEach(el => {
       observer.observe(el);
